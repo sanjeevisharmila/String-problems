@@ -1,0 +1,22 @@
+class Solution {
+    public boolean isIsomorphic(String s, String t) {
+       if(s.length()!=t.length())
+       {
+        return false;
+       } 
+       Map<Character,Integer>mp1=new HashMap<>();
+       Map<Character,Integer>mp2=new HashMap<>();
+       for(int i=0;i<s.length();i++)
+       {
+        Character c1=s.charAt(i);
+        Character c2=t.charAt(i);
+        if(!Objects.equals(mp1.get(c1),mp2.get(c2)))
+        {
+            return false;
+        }
+        mp1.put(c1,i+1);
+        mp2.put(c2,i+1);
+       }
+       return true;
+    }
+}
