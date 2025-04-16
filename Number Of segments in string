@@ -1,0 +1,14 @@
+class Solution {
+    public int countSegments(String s) {
+       String[] arr=s.split(" ");
+       int c=0;
+       for(String st:arr)
+       {
+        if(!Objects.equals(st,""))
+        {
+            c++;
+        }
+       }
+       return c;
+    }
+}
