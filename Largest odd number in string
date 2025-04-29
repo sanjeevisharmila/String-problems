@@ -1,0 +1,21 @@
+class Solution {    
+    public String largeOddNum(String s) {
+     StringBuilder st=new StringBuilder();
+     for(char ch:s.toCharArray())
+     {
+        if(ch!='0')
+        {
+            st.append(ch);
+        }
+     }
+     String ans=st.toString();
+     for(int i=ans.length()-1;i>=0;i--)
+     {
+        if((ans.charAt(i)-'0')%2!=0)
+        {
+            return ans.substring(0,i+1);
+        }
+     }
+     return " ";
+    }
+}
